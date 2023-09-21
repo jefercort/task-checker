@@ -1,11 +1,11 @@
+import React from 'react'
 /*import { useState } from 'react'*/
 import { TodoCounter } from './TodoCounter'
 import { TodoSearch } from './TodoSearch'
 import { TodoList } from './TodoList'
 import { TodoItem } from './TodoItem'
 import { CreateTodoButton } from './CreateTodoButton'
-import React from 'react'
-import './App.css'
+// import './App.css'
 
 // rendereizado de arrays los cuales representan la informacion de los componentes
 const defaultTodos = [
@@ -17,7 +17,8 @@ const defaultTodos = [
 
 function App() {
   return (
-    <React.Fragment>
+    <>
+    {/* <React.Fragment> = <> */}
       <TodoCounter completed={5} total={18} />
       <TodoSearch />
       <TodoList>
@@ -27,12 +28,17 @@ function App() {
         {defaultTodos.map(todo => (
           // cada uno debe recibir un propiedad key, para que cada TodoItem tenga un identificador distinto utulizamos lo unico que podria ser diferente
           // por cada Item creado que seria text. Es decir que cada text va a ser el key diferencial por cada item creado
-          <TodoItem key={todo.text}/>
+          <TodoItem 
+            key={todo.text} 
+            text ={todo.text}
+            completed = {todo.completed}
+          />
         ))}
         {/* nos permite renderizar arrays y por cada array  */}
       </TodoList>
       <CreateTodoButton />
-    </React.Fragment>
+    {/* </React.Fragment> = </> */}
+    </>
   );
 }
 export default App;
