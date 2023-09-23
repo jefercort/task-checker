@@ -11,16 +11,32 @@ import { CreateTodoButton } from './CreateTodoButton'
 const defaultTodos = [
   {text:"Pagar los recibos", completed: false},
   {text:"Sacar a pasear las mascotas", completed: true},
-  {text:"Lavar la loza", completed: true},
+  {text:"Lavar la loza", completed: false},
   {text:"Hacer meditación diaria", completed:false}
 ]
 
 function App() {
+  const [todos, setTodos] = React.useState(defaultTodos);
+  const [searchValue, setSearchValue] = React.useState('');
+  // estos nos van a permitir saber la suma de items con estado complete true or false, la doble negacion (!!) convierten todo en valor booleano por eso lo usamos
+  const completedTodos = todos.filter(todo => !!todo.completed).length;  
+  // para sumar todos los items o arrays que se suman 
+  const totalTodos = todos.length;
+  // para poder hacer el filtro de los items que sean escritos en el buscador 
+  const searchedTodos = todos.filter((todo)=> {todo.text.includes(searchValue)});
+  console.log('Todos los usuarios estan buscando ' + searchValue);
   return (
     <>
     {/* <React.Fragment> = <> */}
-      <TodoCounter completed={5} total={18} />
-      <TodoSearch />
+      <TodoCounter 
+        completed={completedTodos} 
+        total={totalTodos}
+      />
+      <TodoSearch
+        // aca se genera la comunicacion del componente padre al componente hijo que en este caso es TodoSearch.jsx
+        searchValue = {searchValue}
+        setSearchValue = {setSearchValue}
+      />
       <TodoList>
         {/* Para renderizar un array lo llamamos con las llaves {} y con cada informacion creada vamos a renderizar TodoItem, primero se 
         llama el array y luego a partir de ella se crea un nuevo array */}
