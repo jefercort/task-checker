@@ -1,11 +1,13 @@
 import React from "react";
 import { TodoIcon } from "./TodoIcon";
 
-function CompleteIcon() {
+function CompleteIcon({ completed, onComplete }) {
     return (
         <TodoIcon
             type = "check"
-            color = "green"
+            // utilizamos el operador ternario para con base asi es verdadero o falso se defina el color
+            color = {completed ? 'green' : 'gray'}
+            onClick={onComplete}
         />
     );
 }

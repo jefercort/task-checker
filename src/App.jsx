@@ -8,15 +8,29 @@ import { CreateTodoButton } from './CreateTodoButton'
 // import './App.css'
 
 // rendereizado de arrays los cuales representan la informacion de los componentes
-const defaultTodos = [
+
+/*const defaultTodos = [
   {text:"Pagar los recibos", completed: false},
   {text:"Sacar a pasear las mascotas", completed: true},
   {text:"Lavar la loza", completed: false},
   {text:"Hacer meditación diaria", completed:false}
-]
+]*/
+
+
 
 function App() {
-  const [todos, setTodos] = React.useState(defaultTodos);
+  /* lO PRIMERO ES CREAR UNA CONSTANTE PARA REVISAR EL LOCALSTORAGE*/
+  const localStorageTodos = localStorage.getItem('TODOS_V1');
+  /* LO SEGUNDO QUE VA A HACER LA APP ES PARSEAR PARA PODERLO UTILIZAR YA QUE CONVIERTE
+  DE STRING A CODIGO JS */
+  let parsedTodos = JSON.parse(localStorageTodos);
+  /* LUEGO DE REVISAR, A PARTIR DE ESO CARGA LO QUE HAYA Y DESDE AHI SE EMPIEZA A TRABAJAR */
+  const [todos, setTodos] = React.useState(parsedTodos);
+
+  /* ESTE ES PARA CUANDO EL ESTADO INICIAL SEA EL defaultTodos
+  const [todos, setTodos] = React.useState(defaultTodos); */
+
+
   const [searchValue, setSearchValue] = React.useState('');
   // estos nos van a permitir saber la suma de items con estado complete true or false, la doble negacion (!!) convierten todo en valor booleano por eso lo usamos
   const completedTodos = todos.filter(todo => !!todo.completed).length;  
