@@ -72,7 +72,7 @@ function App() {
     newTodos[todoIndex].completed = true
     saveTodos(newTodos);
   };
-  
+
   const deleteTodo = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex(
