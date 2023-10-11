@@ -1,12 +1,18 @@
 import React from "react";
 
 function useLocalStorage (itemName, initialValue) {
-
+    /*VAMOS A CREAR UN NUEVO ESTADO DENTRO DEL CUSTOM HOOK */
+  const [item, setItem] = React.useState(initialValue);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(false);
+  
+  /*VAMOS A HACER LOS ESTADOS DE CARGA Y ERROR */
+  
+  React.useEffect(() => {
     /* lO PRIMERO ES CREAR UNA CONSTANTE PARA REVISAR EL LOCALSTORAGE*/
     const localStorageItem = localStorage.getItem(itemName);
     /* VAMOS A CREAR UNA FUNCION QUE ACTUALICE TANTO EL ESTADO COMO EL LOCAL STORAGE
     POR ELLO ES QUE PRIMERO CREAMOS UNA VARIABLE VACIA Y LUEGO UN CONDICIONAL para que actue con respecto a eso*/
-    
     let parsedItem;
     
     if (!localStorageItem) {
@@ -18,19 +24,28 @@ function useLocalStorage (itemName, initialValue) {
     }else {
       parsedItem = JSON.parse(localStorageItem);
     }
+
+  });
+  
     
-    /*VAMOS A CREAR UN NUEVO ESTADO DENTRO DEL CUSTOM HOOK */
-    const [item, setItem] = React.useState(parsedItem);
+
   
   /* FUNCION QUE ACTUALIZA EL ESTADO Y EL LOCAL STORAGE 
       aca lo que vamos a recibir es un nuevo array de TODOS*/
   
-      const saveItem = (newItem) => {
-        localStorage.setItem(itemName, JSON.stringify(newItem));
-        setItem(newItem);
-      }
+    const saveItem = (newItem) => {
+      localStorage.setItem(itemName, JSON.stringify(newItem));
+      setItem(newItem);
+    }
    /*LUEGO SE RETORNA YA SEA UNA FUNCION O UN OBJETO LO QUE SEA */
-    return [item, saveItem]; 
-  }
+   /* SI HAY MAS DE DOS ELEMENTOS QUE QUEREMOS RETORNAR DE UN CUSTOM HOOK ES
+   RECOMENDABLE QUE ENVIEMOS UN OBJETO {} EN VEZ DE UN ARRAY []
+    return [item, saveItem]; */
+    return {
+      item,
+      saveItem,
+      loading,
+      error,
+  };
 
   export { useLocalStorage };

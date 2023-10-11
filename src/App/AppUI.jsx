@@ -5,6 +5,8 @@ import { TodoItem } from '../TodoItem'
 import { CreateTodoButton } from '../CreateTodoButton'
 
 function AppUI({
+    loading,
+    error,
     completedTodos,
     totalTodos,
     searchValue,
@@ -27,6 +29,14 @@ function AppUI({
         setSearchValue = {setSearchValue}
       />
       <TodoList>
+        {/* /* Estados de carga y error */}
+        {loading && <p>Estamos Cargando ...</p>}
+        {error && <p>Tenemos un error de Carga</p>}
+
+        {/* PARA QUE SE EJECUTE EL ESTADO DE CARGA CON UN CONDICIONAL */}
+
+        {(!loading && searchedTodos.length == 0) && <p>Crea tu Primer TODO!!</p>}
+
         {/* Para renderizar un array lo llamamos con las llaves {} y con cada informacion creada vamos a renderizar TodoItem, primero se 
         llama el array y luego a partir de ella se crea un nuevo array */}
         {/* el metodo .map a diferencia de foreach crea un array a partir del array inicial  */}

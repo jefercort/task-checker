@@ -29,7 +29,12 @@ function App() {
   DE STRING A CODIGO JS */
 //  let parsedTodos = JSON.parse(localStorageTodos);
   /* LUEGO DE REVISAR, A PARTIR DE ESO CARGA LO QUE HAYA Y DESDE AHI SE EMPIEZA A TRABAJAR */
-  const [todos, saveTodos] = useLocalStorage('TODOS_V1', []);
+  const {
+    item: todos, 
+    saveItem: saveTodos,
+    loading,
+    error,
+  } = useLocalStorage('TODOS_V1', []);
 
   /* ESTE ES PARA CUANDO EL ESTADO INICIAL SEA EL defaultTodos
   const [todos, setTodos] = React.useState(defaultTodos); */
@@ -39,6 +44,12 @@ function App() {
   const completedTodos = todos.filter(todo => !!todo.completed).length;  
   // para sumar todos los items o arrays que se suman 
   const totalTodos = todos.length;
+
+
+
+
+
+
   // para poder hacer el filtro de los items que sean escritos en el buscador, con esta funcion 
   // sabremos si el text declarado en searchValue contiene algo del o dicho 
   // para que el filtro funcione con mayusculas y minusculas en la validación pondremos
@@ -85,7 +96,10 @@ function App() {
     saveTodos(newTodos);
   };
   return (
+    /* PARA QUE NOS LLEGUEN AL COMPONENTE APPUI Y SE LO ENVIAMOS POR ACA LA PROPIEDAD */
     <AppUI 
+      loading={loading}
+      error={error}
       completedTodos = {completedTodos}
       totalTodos = {totalTodos}
       searchValue = {searchValue}
