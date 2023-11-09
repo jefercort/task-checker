@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import { useLocalStorage } from "./useLocalStorage";
 
 const TodoContext = React.createContext();
@@ -8,7 +8,7 @@ const TodoContext = React.createContext();
 // 2. A la hora de exportarlo queda mas facil para nombrarlo y organizarlo
 // 3. Dentro del provider podemos encapsular la logica de la aplicacion que querramos compartir en los diferentes niveles de lo componentes
 
-function TodoProvider() {
+function TodoProvider({children}) {
 
   /*EMPEZAMOS A USAR EN VEZ DE REACT.USESTATE USAMOS NUESTRO CUSTOM HOOK CREADO PARA QUE TRAIGA 
   LOS ELEMENTOS QUE NECESITAMOS DEFINIMOS EL NOMBRE DEL ESPACIO DONDE GUARDAMOS 
@@ -100,7 +100,7 @@ function TodoProvider() {
         }}>
             {/* CUALQUIER COMPONENTE QUE ESTE AQUI DENTRO TIENE LA POSIBILIDAD DE OBTENER INFORMACION DE
             TODAS LAS PROPIEDADES MENCIONADAS ARRIBA */}
-
+          {children}
         </TodoContext.Provider>
     );
 }
