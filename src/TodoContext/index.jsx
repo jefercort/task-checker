@@ -30,6 +30,8 @@ function TodoProvider({children}) {
   const [todos, setTodos] = React.useState(defaultTodos); */
 
     const [searchValue, setSearchValue] = React.useState('');
+    // ESTE ES EL ACTUALIZADOR DE ESTADO DE MODAL
+    const [openModal, setOpenModal] = React.useState(true);
     // estos nos van a permitir saber la suma de items con estado complete true or false, la doble negacion (!!) convierten todo en valor booleano por eso lo usamos
     const completedTodos = todos.filter(todo => !!todo.completed).length;  
     // para sumar todos los items o arrays que se suman 
@@ -97,6 +99,8 @@ function TodoProvider({children}) {
             searchedTodos,
             completeTodo,
             deleteTodo,
+            openModal,
+            setOpenModal,
         }}>
             {/* CUALQUIER COMPONENTE QUE ESTE AQUI DENTRO TIENE LA POSIBILIDAD DE OBTENER INFORMACION DE
             TODAS LAS PROPIEDADES MENCIONADAS ARRIBA */}
