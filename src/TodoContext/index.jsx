@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React, { children } from "react";
 import { useLocalStorage } from "./useLocalStorage";
 
 const TodoContext = React.createContext();
@@ -30,17 +30,12 @@ function TodoProvider({children}) {
   const [todos, setTodos] = React.useState(defaultTodos); */
 
     const [searchValue, setSearchValue] = React.useState('');
-    // ESTE ES EL ACTUALIZADOR DE ESTADO DE MODAL
-    const [openModal, setOpenModal] = React.useState(true);
+    // ESTE ES EL ACTUALIZADOR DE ESTADO DE MODAL y se queda en false para que cuando se abra la pagina no inicie junto a ella 
+    const [openModal, setOpenModal] = React.useState(false);
     // estos nos van a permitir saber la suma de items con estado complete true or false, la doble negacion (!!) convierten todo en valor booleano por eso lo usamos
     const completedTodos = todos.filter(todo => !!todo.completed).length;  
     // para sumar todos los items o arrays que se suman 
     const totalTodos = todos.length;
-
-
-
-
-
 
   // para poder hacer el filtro de los items que sean escritos en el buscador, con esta funcion 
   // sabremos si el text declarado en searchValue contiene algo del o dicho 
@@ -54,6 +49,17 @@ function TodoProvider({children}) {
         // todo.text.toLowerCase().includes(searchValue.toLowerCase())});
         }
     );
+
+    const addTodo = (text) => {
+      // aca llamamos a la funcion saveTodos y enviarle el nuevo array de todos que contenga el texto que nos enviaron los usuarios desde el componente todoForm
+      const newTodos = [...todos];    
+      newTodos.push({
+        text,
+        // se pone false porque cuando se crea la tarea no se ha completado
+        completed: false,
+      });
+      saveTodos(newTodos);
+    };
 
   // vamos a crear una funcion actualizadora del estado a partir de setTodos 
     const completeTodo = (text) => {
@@ -87,7 +93,8 @@ function TodoProvider({children}) {
         newTodos.splice(todoIndex, 1);
         saveTodos(newTodos);
     };
-    // ACA ENCAPSULAMOS Y PONEMOS TODOS LOS COMPONENTES QUE NECESITEMOS   
+    // ACA ENCAPSULAMOS Y PONEMOS TODOS LOS COMPONENTES QUE NECESITEMOS  
+    // toda la informacion que queramos compartir en nuestro contexto tiene que estar en TodoValue del TodoContext.Provider 
     return (
         <TodoContext.Provider value={{
             loading,
@@ -96,6 +103,7 @@ function TodoProvider({children}) {
             totalTodos,
             searchValue,
             setSearchValue,
+            addTodo,
             searchedTodos,
             completeTodo,
             deleteTodo,

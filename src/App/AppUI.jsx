@@ -9,6 +9,7 @@ import { TodosError } from '../TodosError';
 import { EmptyTodos } from '../EmptyTodos';
 import { TodoContext } from '../TodoContext';
 import { Modal } from '../Modal';
+import { TodoForm } from '../TodoForm';
 
 function AppUI() {
   const {
@@ -82,12 +83,14 @@ function AppUI() {
         {/* nos permite renderizar arrays y por cada array  */}
       </TodoList>
 
-      <CreateTodoButton />
+      <CreateTodoButton
+        setOpenModal={setOpenModal}
+      />
         {/* Por dentro del Modal debe ir toda la logica y componentes que quiero teletransportar entre nodos de HTML */}
         {/* Por medio de estados creamos uno con el cual por medio de true or false se active o desactive el portal */}
       {openModal && (
         <Modal>
-          eres grandioso Kevin, te permites ser rico, ser prospero
+          <TodoForm />
         </Modal>
       )}
     {/* </React.Fragment> = </> */}
