@@ -1,173 +1,173 @@
 # 📝 Task Checker
 
-Una aplicación web moderna para gestión de tareas construida con React y Vite, diseñada para ayudarte a mantener organizadas tus actividades diarias de manera simple y eficiente.
+A modern web application for task management built with React and Vite, designed to help you keep your daily activities organized in a simple and efficient way.
 
-## 🎯 Descripción
+## 🎯 Description
 
-Task Checker es una aplicación de lista de tareas (to-do list) desarrollada como proyecto de aprendizaje de React.js. Permite a los usuarios crear, gestionar y completar tareas de manera intuitiva con una interfaz limpia y responsive.
+Task Checker is a to-do list application developed as a React.js learning project. It allows users to create, manage, and complete tasks intuitively with a clean and responsive interface.
 
-Este proyecto fue creado como parte de mi proceso de aprendizaje de JavaScript y React, implementando conceptos fundamentales como:
-- Componentes de React
+This project was created as part of my JavaScript and React learning journey, implementing fundamental concepts such as:
+- React Components
 - Hooks (useState, useEffect)
-- Props y estado
-- Manejo de eventos
-- Renderizado condicional
+- Props and state
+- Event handling
+- Conditional rendering
 
-## ✨ Características
+## ✨ Features
 
-- ✅ Crear nuevas tareas
-- ✅ Marcar tareas como completadas
-- ✅ Eliminar tareas
-- ✅ Filtrar tareas (todas, activas, completadas)
-- ✅ Contador de tareas pendientes
-- ✅ Interfaz responsive
-- ✅ Hot Module Replacement (HMR) con Vite
+- ✅ Create new tasks
+- ✅ Mark tasks as completed
+- ✅ Delete tasks
+- ✅ Filter tasks (all, active, completed)
+- ✅ Pending tasks counter
+- ✅ Responsive interface
+- ✅ Hot Module Replacement (HMR) with Vite
 
-## 🚀 Tecnologías Utilizadas
+## 🚀 Technologies Used
 
-- **React 18** - Biblioteca de JavaScript para construir interfaces de usuario
-- **Vite** - Build tool rápido y moderno
-- **JavaScript ES6+** - Lenguaje de programación
-- **CSS3** - Estilos y diseño responsive
-- **ESLint** - Linter para mantener la calidad del código
+- **React 18** - JavaScript library for building user interfaces
+- **Vite** - Fast and modern build tool
+- **JavaScript ES6+** - Programming language
+- **CSS3** - Styling and responsive design
+- **ESLint** - Linter to maintain code quality
 
-## 📋 Requisitos Previos
+## 📋 Prerequisites
 
-Antes de comenzar, asegúrate de tener instalado:
+Before you begin, ensure you have installed:
 
-- [Node.js](https://nodejs.org/) (versión 14.0 o superior)
-- [npm](https://www.npmjs.com/) o [yarn](https://yarnpkg.com/)
+- [Node.js](https://nodejs.org/) (version 14.0 or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 - Git
 
-## 🔧 Instalación
+## 🔧 Installation
 
-1. **Clona el repositorio**
+1. **Clone the repository**
    ```bash
    git clone https://github.com/jefercort/task-checker.git
    ```
 
-2. **Navega al directorio del proyecto**
+2. **Navigate to the project directory**
    ```bash
    cd task-checker
    ```
 
-3. **Instala las dependencias**
+3. **Install dependencies**
    ```bash
    npm install
-   # o
+   # or
    yarn install
    ```
 
-4. **Inicia el servidor de desarrollo**
+4. **Start the development server**
    ```bash
    npm run dev
-   # o
+   # or
    yarn dev
    ```
 
-5. **Abre tu navegador**
+5. **Open your browser**
    
-   La aplicación estará disponible en `http://localhost:5173`
+   The application will be available at `http://localhost:5173`
 
-## 📖 Uso
+## 📖 Usage
 
-### Agregar una tarea
-1. Escribe el nombre de tu tarea en el campo de entrada
-2. Presiona Enter o haz clic en el botón "Agregar"
+### Add a task
+1. Type your task name in the input field
+2. Press Enter or click the "Add" button
 
-### Completar una tarea
-- Haz clic en el checkbox junto a la tarea para marcarla como completada
+### Complete a task
+- Click the checkbox next to the task to mark it as completed
 
-### Eliminar una tarea
-- Haz clic en el botón de eliminar (X) para remover la tarea de la lista
+### Delete a task
+- Click the delete button (X) to remove the task from the list
 
-### Filtrar tareas
-- Usa los botones de filtro para ver:
-  - Todas las tareas
-  - Solo tareas activas
-  - Solo tareas completadas
+### Filter tasks
+- Use the filter buttons to view:
+  - All tasks
+  - Active tasks only
+  - Completed tasks only
 
-## 📁 Estructura del Proyecto
+## 📁 Project Structure
 
 ```
 task-checker/
-├── public/              # Archivos públicos estáticos
-├── src/                 # Código fuente
-│   ├── components/      # Componentes de React
-│   ├── styles/          # Archivos CSS
-│   ├── App.jsx          # Componente principal
-│   └── main.jsx         # Punto de entrada
-├── .gitignore          # Archivos ignorados por Git
-├── index.html          # HTML principal
-├── package.json        # Dependencias y scripts
-├── vite.config.js      # Configuración de Vite
-└── README.md           # Este archivo
+├── public/              # Static public files
+├── src/                 # Source code
+│   ├── components/      # React components
+│   ├── styles/          # CSS files
+│   ├── App.jsx          # Main component
+│   └── main.jsx         # Entry point
+├── .gitignore          # Files ignored by Git
+├── index.html          # Main HTML
+├── package.json        # Dependencies and scripts
+├── vite.config.js      # Vite configuration
+└── README.md           # This file
 ```
 
-## 🛠️ Scripts Disponibles
+## 🛠️ Available Scripts
 
 ```bash
-# Desarrollo
-npm run dev           # Inicia el servidor de desarrollo
+# Development
+npm run dev           # Start development server
 
 # Build
-npm run build         # Construye la aplicación para producción
+npm run build         # Build the app for production
 
 # Preview
-npm run preview       # Vista previa del build de producción
+npm run preview       # Preview production build
 
 # Linting
-npm run lint          # Ejecuta ESLint para verificar el código
+npm run lint          # Run ESLint to check code
 ```
 
-## 🎓 Aprendizajes Clave
+## 🎓 Key Learnings
 
-Durante el desarrollo de este proyecto, he aprendido:
+During the development of this project, I learned:
 
-- **Fundamentos de React**: Componentes, JSX, props y estado
-- **Hooks de React**: useState para manejar el estado local
-- **Manejo de eventos**: onClick, onChange, onSubmit
-- **Renderizado de listas**: Uso de map() y keys únicas
-- **Renderizado condicional**: Mostrar/ocultar elementos basado en el estado
-- **Vite como herramienta de build**: Configuración y optimización
-- **Mejores prácticas**: Estructura de proyecto, naming conventions
+- **React Fundamentals**: Components, JSX, props, and state
+- **React Hooks**: useState for managing local state
+- **Event Handling**: onClick, onChange, onSubmit
+- **List Rendering**: Using map() and unique keys
+- **Conditional Rendering**: Show/hide elements based on state
+- **Vite as a Build Tool**: Configuration and optimization
+- **Best Practices**: Project structure, naming conventions
 
-## 🚧 Próximas Mejoras
+## 🚧 Future Improvements
 
-- [ ] Persistencia de datos con LocalStorage
-- [ ] Drag and drop para reordenar tareas
-- [ ] Categorías o etiquetas para las tareas
-- [ ] Fechas de vencimiento
-- [ ] Modo oscuro
-- [ ] Animaciones de transición
-- [ ] Testing con Jest y React Testing Library
-- [ ] Integración con backend (API REST)
+- [ ] Data persistence with LocalStorage
+- [ ] Drag and drop to reorder tasks
+- [ ] Categories or tags for tasks
+- [ ] Due dates
+- [ ] Dark mode
+- [ ] Transition animations
+- [ ] Testing with Jest and React Testing Library
+- [ ] Backend integration (REST API)
 
-## 🤝 Contribuciones
+## 🤝 Contributing
 
-Las contribuciones son bienvenidas! Si deseas contribuir:
+Contributions are welcome! If you'd like to contribute:
 
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📝 Licencia
+## 📝 License
 
-Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE](LICENSE) para más detalles.
+This project is under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Autor
+## 👨‍💻 Author
 
-**Kevin Cortes**
+**Jefferson Cortés**
 - GitHub: [@jefercort](https://github.com/jefercort)
 
-## 🙏 Agradecimientos
+## 🙏 Acknowledgments
 
-- Curso de Introducción a React.js
-- La comunidad de React por los recursos de aprendizaje
-- Vite por la excelente herramienta de desarrollo
+- Introduction to React.js Course
+- React community for learning resources
+- Vite for the excellent development tool
 
 ---
 
-⭐ Si este proyecto te ha sido útil, considera darle una estrella en GitHub!
+⭐ If you found this project helpful, consider giving it a star on GitHub!
