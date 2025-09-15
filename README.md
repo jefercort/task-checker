@@ -159,7 +159,7 @@ This project is under the MIT License - see the [LICENSE](LICENSE) file for deta
 
 ## 👨‍💻 Author
 
-**Jefferson Cortés**
+**Kevin Cortes**
 - GitHub: [@jefercort](https://github.com/jefercort)
 
 ## 🙏 Acknowledgments
